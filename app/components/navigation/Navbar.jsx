@@ -1,29 +1,51 @@
 "use client";
-import React, { useState } from "react";
-import { Menu,XIcon } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { LifeBuoyIcon, Menu, XIcon } from "lucide-react";
 
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
+  //get the current window size
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [open, setOpen] = useState(true);
+useEffect(() => {
+    if (windowSize > 768) {
+      setOpen(true);
+    } else {
+      setOpen(false);
+    }
+  }, []);
+  window.addEventListener("resize", () => {
+    setWindowSize(window.innerWidth);
+  });
   return (
     <nav className="navbar">
-    
+      {open ? (
+        <Menu
+          className={`navbar-menu`}
+          onClick={() => setOpen(!open)}
+          size={40}
+        />
+      ) : (
+        <XIcon
+          className="menu-close"
+          onClick={() => setOpen(!open)}
+          size={40}
+        />
+      )}
+      {(!open && window.innerWidth < 768) || windowSize > 600 ? (
         <ul>
-          <li>
-          {open? <Menu className="navbar-menu" onClick={() => setOpen(!open)} />:<XIcon onClick={()=>setOpen(!open)} />}
-          </li>
           {["Home", "Courses", "Pricing", "About", "Contact"].map(
             (item, index) => {
               return <li key={`${item}-${index}`}>{item}</li>;
             }
           )}
+          <span className="btn-group">
+            <button className="btn-secondary">Login</button>
+            <button className="btn-secondary">Sign Up</button>
+          </span>
         </ul>
-        <div className="btn-group">
-      <button className="btn-secondary">Login</button>
-      <button className="btn-secondary">Sign Up</button>
-      </div>
+      ) : null}
     </nav>
   );
 };

@@ -1,8 +1,41 @@
-.navbar{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+.navbar {
+  display: flex;
+  gap: 2rem;
+  min-width: 8rem;
 }
-.navbar-menu{
-    cursor: pointer;
+.navbar-menu,
+.menu-close {
+  display: none;
+  cursor: pointer;
+}
+.navbar-menu:hover,
+.menu-close:hover {
+  background-color: gray;
+}
+.navbar ul > li {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar,
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .navbar .btn-group{
+    align-items: stretch;
+  }
+  .navbar {
+    background-color: #222831;
+    position: absolute;
+    padding: 1rem 0.5rem;
+    right: 0.25rem;
+    top: 0;
+  }
+  .menu-close,
+  .navbar-menu {
+    display: block;
+  }
 }

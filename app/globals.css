@@ -2,10 +2,12 @@
   --primary-color: #0ea5e9; /* Sky Blue */
   --secondary-color: #14b8a6; /* Teal Green */
   --accent-color: #f97316; /* Burnt Orange */
+  --accent-secondary-color: #b4520c; /* Burnt Orange */
   --background-color: #f3f4f6; /* Soft Light Gray */
-  --surface-color: #ffffff; /* White */
+  --surface-color: #cac8c8; /* White */
   --text-primary-color: #1e293b; /* Navy Blue */
   --text-secondary-color: #475569; /* Cool Gray */
+  --border-color-secondary: #3e4753;
   --border-color: #cbd5e1; /* Light Cool Gray */
 
   --font-family-primary: "Inter", sans-serif;
@@ -30,6 +32,9 @@ body {
   background-color: var(--background-color);
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 header {
   background-color: var(--primary-color);
@@ -158,6 +163,9 @@ input[type="radio"]:checked {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
 }
+button {
+  text-wrap: nowrap;
+}
 
 button.btn-primary {
   background-color: var(--primary-color);
@@ -196,6 +204,7 @@ button.btn-secondary {
 button.btn-secondary:hover {
   background-color: #059669; /* Darker green */
 }
+
 h1 {
   font-size: 2rem;
 }
@@ -207,13 +216,53 @@ h3 {
 }
 ul {
   display: flex;
+  padding: 0;
   list-style: none;
+}
+li {
+  border-radius: 5px;
+  border: 1px solid inherit;
+  padding: 0.125rem 0.5rem;
+}
+li:hover {
+  background-color: var(--border-color-secondary);
+  border: 1px solid var(--accent-secondary-color);
 }
 nav ul li {
   margin-right: 0.75rem;
   cursor: pointer;
 }
-.btn-group{
+nav ul li:last-child {
+  background-color: inherit;
+}
+.btn-group {
   display: flex;
   gap: 1.5rem;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.btn-primary.btn-cta {
+  background-color: var(--accent-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+button.btn-primary.btn-cta:hover {
+  --accent-color: #f97316; /* Burnt Orange */
+}
+@media only screen and (max-width: 600px) {
+  .hero {
+    width: 90%;
+  }
+  .btn-group {
+    flex-direction: column;
+  }
+}
+@media only screen and (600px<width<768px) {
+  .hero {
+    width: 90%;
+  }
 }
