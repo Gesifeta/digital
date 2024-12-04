@@ -1,0 +1,106 @@
+.courseCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding-bottom: 1rem;
+  position: relative;
+}
+.courseCard__content > div{
+  padding:0 1rem;
+}
+.courseCard__content .title {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+.price {
+  display: flex;
+  gap: 0.5rem;
+}
+.price span {
+  display: flex;
+  align-items: center;
+  font-size: larger;
+  padding: 0.125rem;
+}
+.course__info__container {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  animation: swing 4s infinite 3s;
+  justify-content: flex-end;
+  padding: 1rem 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  z-index: 10;
+}
+.course__info__container:hover {
+  background-color: var(--primary-color);
+  animation: none;
+}
+.courseCard__heading {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.25rem;
+}
+.courseCard__image {
+  width: 100%;
+}
+.courseCard img {
+  width: 100%;
+  border-radius: 10px;
+  aspect-ratio: 19/12;
+}
+.courseCard__content {
+  padding: 0 0.75rem;
+  gap: 3rem;
+}
+.container-prerequisites {
+  border: 1px solid var(--background-color);
+  border-color: var(--border-color);
+  border-radius: 5px;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  margin: 1rem 0.5rem;
+  padding: 0.5rem 0.25rem;
+}
+.container-prerequisites span {
+  background-color: var(--background-color);
+  border-radius: 0.5rem;
+}
+.container-prerequisites span:hover {
+  background-color: #e5e7eb;
+}
+@keyframes swing {
+  10% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  75% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

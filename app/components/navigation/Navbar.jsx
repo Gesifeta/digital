@@ -1,23 +1,24 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { LifeBuoyIcon, Menu, XIcon } from "lucide-react";
+import { Menu, XIcon } from "lucide-react";
 
 import "./Navbar.css";
 
 const Navbar = () => {
   //get the current window size
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [windowSize, setWindowSize] = useState(769);
   const [open, setOpen] = useState(true);
-useEffect(() => {
+  useEffect(() => {
+    window?.addEventListener("resize", () => {
+      setWindowSize(window.innerWidth);
+    });
     if (windowSize > 768) {
       setOpen(true);
     } else {
       setOpen(false);
     }
   }, []);
-  window.addEventListener("resize", () => {
-    setWindowSize(window.innerWidth);
-  });
+
   return (
     <nav className="navbar">
       {open ? (
@@ -33,7 +34,7 @@ useEffect(() => {
           size={40}
         />
       )}
-      {(!open && window.innerWidth < 768) || windowSize > 600 ? (
+      {(!open && window.innerWidth < 768) || windowSize > 768 ? (
         <ul>
           {["Home", "Courses", "Pricing", "About", "Contact"].map(
             (item, index) => {

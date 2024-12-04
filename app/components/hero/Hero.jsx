@@ -76,7 +76,7 @@ const Hero = () => {
         },
       ],
       link: "",
-      image: "/frontend4.jpg",
+      icon: "/frontend4.jpg",
     },
     {
       id: 2,
@@ -115,14 +115,26 @@ const Hero = () => {
             "PostgreSQL is a powerful, open-source object-relational database system known for its extensibility and SQL compliance. It is widely used for web applications and other database-intensive applications.",
         },
         {
+          name: "RESTful API",
+          icon: "/api.svg",
+          description:
+            "RESTful API is an architectural style for designing networked applications. It is a set of principles and constraints that enable the creation of web services that are lightweight, scalable, and maintainable.",
+        },
+        {
           name: "GraphQL",
           icon: "/graphql.svg",
           description:
             "GraphQL is a query language for APIs and a runtime for executing those queries with existing data. It is a complete solution for API development, allowing clients to request exactly the data they need and nothing more.",
         },
+        {
+          name: "Docker",
+          icon: "/docker.svg",
+          description:
+            "Docker is a platform for developing, shipping, and running applications in containers. It provides an efficient, consistent, and portable way to package and deploy applications.",
+        },        
       ],
       link: "",
-      image: "/backend1.jpg",
+      icon: "/backend1.jpg",
     },
     {
       id: 3,
@@ -169,12 +181,12 @@ const Hero = () => {
       ],
       price: 11250,
       link: "",
-      image: "/fullstack2.jpg",
+      icon: "/fullstack2.jpg",
     },
     {
       title: "Amazon Web Services",
       link: "",
-      image: "/cloud3.avif",
+      icon: "/cloud3.avif",
       description:
         "Amazon Web Services (AWS) is a comprehensive and widely-used cloud computing platform offered by Amazon. It provides a wide range of on-demand cloud computing services, including computing power, storage, databases, machine learning, analytics, and more. AWS offers a pay-as-you-go pricing model, allowing users to scale resources as needed, making it cost-effective for businesses and individuals of all sizes.",
       stacks: [
@@ -188,7 +200,7 @@ const Hero = () => {
           name: "S3",
           icon: "/s3.svg",
           description:
-            "Amazon S3 is an object storage service offered by Amazon Web Services (AWS). It is designed to store and retrieve any amount of data, such as files, images, videos, and other types of data, from anywhere on the web. S3 provides a highly scalable, reliable, and cost-effective storage solution for storing and retrieving data in the cloud.",
+            "Amazon S3 is an object storage service offered by Amazon Web Services (AWS). It is designed to store and retrieve any amount of data, such as files, icons, videos, and other types of data, from anywhere on the web. S3 provides a highly scalable, reliable, and cost-effective storage solution for storing and retrieving data in the cloud.",
         },
         {
           name: "RDS",
@@ -218,7 +230,7 @@ const Hero = () => {
           name: "CloudFront",
           icon: "/cloudfront.svg",
           description:
-            "Amazon CloudFront is a content delivery network (CDN) service offered by Amazon Web Services (AWS). It allows users to distribute content, such as web pages, images, videos, and other types of data, globally with low latency across the world. CloudFront provides a highly scalable, reliable, and cost-effective content delivery network solution for distributing content in the cloud.",
+            "Amazon CloudFront is a content delivery network (CDN) service offered by Amazon Web Services (AWS). It allows users to distribute content, such as web pages, icons, videos, and other types of data, globally with low latency across the world. CloudFront provides a highly scalable, reliable, and cost-effective content delivery network solution for distributing content in the cloud.",
         },
         {
           name: "DynamoDB",
@@ -279,11 +291,10 @@ const Hero = () => {
       ],
       price: 20000,
       link: "",
-      image: "/cloud1.jpg",
+      icon: "/cloud1.jpg",
     },
   ];
   const [counter, setCounter] = useState(0);
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCounter((prevCounter) =>
@@ -297,6 +308,16 @@ const Hero = () => {
 
   return (
     <div className={styles.containerhero}>
+      <h1 style={
+        {
+          fontSize: "2rem",
+          fontWeight: "bold",
+          textAlign: "center",
+          color: "#fff",
+          marginBottom: "3rem",
+        }
+      }>Everything you need to succeed</h1>
+       
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1>{services[counter].title}</h1>
@@ -316,12 +337,11 @@ const Hero = () => {
               enhance teaching, learning, and collaboration. Accessible,
               engaging, and built for success.
             </p>
-            <button className="btn-primary btn-cta">Get Started</button>
-          </span>
+    </span>
         </div>
         <div className={styles.heroImage}>
           <Image
-            src={services[counter].image}
+            src={services[counter].icon}
             alt={services[counter].title}
             width={400}
             height={400}

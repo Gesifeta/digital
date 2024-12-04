@@ -1,0 +1,39 @@
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 10% 10% 70% 10%;
+  grid-template-rows: auto;
+  justify-content: space-between;
+
+  grid-template-areas:
+    "header header header header"
+    "sidebar progressbar main infobar"
+    "sidebar progressbar detailbar detailbar infobar";
+    min-height: 100vh;
+}
+.header {
+  border: 1px solid red;
+  background-color: var(--surface-color);
+  grid-area: header;
+}
+.sidbar {
+  display: flex;
+  flex-direction: column;
+  grid-area: sidebar;
+}
+.progressbar {
+  display: flex;
+  flex-direction: column;
+  grid-area: progressbar;
+}
+.main {
+  grid-area: main;
+}
+.infobar{
+    display: flex;
+    flex-direction: column;
+    grid-area: infobar;
+}
+.detailbar{
+    grid-area: detailbar;
+}

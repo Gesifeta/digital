@@ -34,6 +34,7 @@ body {
   overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 * {
+  /* border: 1px solid red; */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 header {
@@ -213,7 +214,12 @@ h2 {
 }
 h3 {
   font-size: 1.25rem;
+  color: #e5e7eb;
 }
+h4 {
+  font-size: 0.75rem;
+}
+
 ul {
   display: flex;
   padding: 0;
@@ -224,9 +230,38 @@ li {
   border: 1px solid inherit;
   padding: 0.125rem 0.5rem;
 }
+a {
+  text-decoration: none;
+  color: #000;
+  padding: 0.125rem 0.25rem;
+}
+a:hover {
+  color: var(--accent-secondary-color);
+}
+.title-main{
+  color: #000;
+  font-size: 2rem;
+  padding: 2rem 0;
+  font-weight: var(--font-weight-primary-bold);
+}
+.title{
+  color: #000;
+  font-size: var(--font-size-primary);
+  font-weight: var(--font-weight-primary-bold);
+}
+.description {
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-secondary-medium);
+  color: var(--text-secondary-color);
+}
+.detail {
+  color: gray;
+  font-size: 12px;
+  padding: 0.25rem 0.5rem;
+}
 li:hover {
-  background-color: var(--border-color-secondary);
-  border: 1px solid var(--accent-secondary-color);
+  background-color: var(--color-secondary);
+  border: 1px solid var(--ant--color);
 }
 nav ul li {
   margin-right: 0.75rem;
@@ -248,12 +283,12 @@ nav ul li:last-child {
 .btn-primary.btn-cta {
   background-color: var(--accent-color);
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 }
 button.btn-primary.btn-cta:hover {
   --accent-color: #f97316; /* Burnt Orange */
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .hero {
     width: 90%;
   }
